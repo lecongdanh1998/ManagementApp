@@ -58,7 +58,7 @@ public class MySiteActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onBackPressed() {
-
+        onBackPressed();
         super.onBackPressed();
     }
 }
