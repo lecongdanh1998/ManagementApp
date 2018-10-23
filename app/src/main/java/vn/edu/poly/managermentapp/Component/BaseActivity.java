@@ -1,0 +1,7 @@
+package vn.edu.poly.managermentapp.Component;
+
+import android.support.v7.app.AppCompatActivity;
+
+public class BaseActivity extends AppCompatActivity {
+
+}
