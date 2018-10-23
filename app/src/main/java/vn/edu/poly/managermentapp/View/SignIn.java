@@ -75,12 +75,14 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
         int id = v.getId();
+        Intent intent;
         switch (id) {
             case R.id.btn_signIn:
                 SingIn();
                 break;
             case R.id.layout_your_site:
-                //add website url
+                intent = new Intent(SignIn.this,MySiteActivity.class);
+                startActivity(intent);
                 break;
             default:
                 break;
