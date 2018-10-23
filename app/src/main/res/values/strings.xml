@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ManagermentApp</string>
+    <string name="Str_txtMySite">MY SITE</string>
+    <string name="Str_txtNewSite">New Site</string>
+    <string name="Str_extHintFindMySite">Search Sites</string>
+    <string name="Str_btnAddMySite">New Site</string>
 </resources>
