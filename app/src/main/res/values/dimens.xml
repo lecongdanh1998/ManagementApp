@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="logo_size_signIn">170dp</dimen>
+    <dimen name="text_size_your_site_signIn">30sp</dimen>
+    <dimen name="marginTop_font_signIn">25dp</dimen>
+    <dimen name="padding_edt_form_signIn">15dp</dimen>
+    <dimen name="margin_form_signIn">16dp</dimen>
+    <dimen name="textSmall">10sp</dimen>
+    <dimen name="textMedium">15sp</dimen>
+    <dimen name="textLager">20sp</dimen>
     <dimen name="dimens_heigth_toobar">56dp</dimen>
     <dimen name="dimens_heigth_itemLst">80dp</dimen>
     <dimen name="dimens_margin">16dp</dimen>
