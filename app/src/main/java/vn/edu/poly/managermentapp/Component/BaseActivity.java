@@ -1,5 +1,6 @@
 package vn.edu.poly.managermentapp.Component;
 
+<<<<<<< HEAD
 import android.Manifest;
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -65,4 +66,10 @@ public class BaseActivity extends AppCompatActivity {
             // permissions this app might request.
         }
     }
+=======
+import android.support.v7.app.AppCompatActivity;
+
+public class BaseActivity extends AppCompatActivity {
+
+>>>>>>> e62669240d8b883b7262e41b189cbfdde6db1002
 }

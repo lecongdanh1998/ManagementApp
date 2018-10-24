@@ -1,4 +1,4 @@
-package vn.edu.poly.managermentapp.View;
+package vn.edu.poly.managermentapp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -24,10 +24,13 @@ import java.util.ArrayList;
 
 import vn.edu.poly.managermentapp.Adapter.MenuAdapter;
 import vn.edu.poly.managermentapp.Component.BaseActivity;
+<<<<<<< HEAD:app/src/main/java/vn/edu/poly/managermentapp/View/MainActivity.java
 import vn.edu.poly.managermentapp.Model.MenuModel;
 import vn.edu.poly.managermentapp.R;
 import vn.edu.poly.managermentapp.View.Dashboard.Dashboard;
 import vn.edu.poly.managermentapp.View.Post.Post;
+=======
+>>>>>>> e62669240d8b883b7262e41b189cbfdde6db1002:app/src/main/java/vn/edu/poly/managermentapp/MainActivity.java
 
 public class MainActivity extends BaseActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
 

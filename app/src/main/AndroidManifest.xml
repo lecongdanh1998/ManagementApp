@@ -2,11 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="vn.edu.poly.managermentapp">
+<<<<<<< HEAD
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+=======
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+>>>>>>> e62669240d8b883b7262e41b189cbfdde6db1002
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -29,12 +35,16 @@
         <activity android:name=".View.MainActivity" />
         <activity android:name=".View.SignIn" android:windowSoftInputMode="adjustResize|adjustPan"></activity>
         <activity android:name=".View.MySiteAddSiteActivity"></activity>
+<<<<<<< HEAD
         <receiver android:name=".Networking.NetworkStateMonitor"
             tools:ignore="InnerclassSeparator">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
+=======
+        <activity android:name=".SplashScreen"></activity>
+>>>>>>> e62669240d8b883b7262e41b189cbfdde6db1002
     </application>
 
 </manifest>
