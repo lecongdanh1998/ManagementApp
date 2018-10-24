@@ -1,16 +1,8 @@
 package vn.edu.poly.managermentapp.View;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -36,7 +27,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import vn.edu.poly.managermentapp.Component.BaseActivity;
-import vn.edu.poly.managermentapp.Networking.NetworkStateMonitor;
 import vn.edu.poly.managermentapp.R;
 import vn.edu.poly.managermentapp.Server.ApiConnect;
 import vn.edu.poly.managermentapp.Util.ValidateForm;
@@ -50,31 +40,16 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
     SharedPreferences.Editor editor;
     private ProgressDialog progressDialog;
     private RelativeLayout layout_your_site;
-    BroadcastReceiver broadcastReceiver;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
-        broadcastReceiver = new BroadcastReceiver() {
-            @Override
-            public void onReceive(Context context, Intent intent) {
-                if (new NetworkStateMonitor().checkInterNet(context)){
-                    Toast.makeText(context, "Connected internet", Toast.LENGTH_SHORT).show();
-                    dialog().dismiss();
-                    dialog().cancel();
-                } else {
-//                    dialog().show();
-                    Toast.makeText(context, "Vui long kiem tra ket noi inter net",
-                            Toast.LENGTH_SHORT).show();
-                }
-            }
-        };
         initView();
         initData();
         initEventButton();
     }
     private void initView() {
-        checkInternetPermission(this);
+        checkInternet(this);
         btn_signin = findViewById(R.id.btn_signIn);
         edt_user_signIn = findViewById(R.id.edt_user_signIn);
         edt_password_signIn = findViewById(R.id.edt_password_signIn);
@@ -107,9 +82,6 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
             case R.id.layout_your_site:
                 //add website url
                 break;
-            case R.id.btn_connect_internet:
-                startActivityForResult(new Intent(Settings.ACTION_SETTINGS) , 0);
-                break;
             default:
                 break;
         }
@@ -123,6 +95,7 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
 
     private void SingIn(){
         setContentDialog("Sign in", "Please wait...");
+        progressDialog.show();
         useremail = edt_user_signIn.getText().toString().trim();
         userpassword = edt_password_signIn.getText().toString().trim();
         RequestQueue requestSignIn = Volley.newRequestQueue(this);
@@ -180,29 +153,7 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
 
         if (errorCode == 0){
             requestSignIn.add(signInRequest);
-            progressDialog.show();
         }
 //        intentView(MainActivity.class);
-    }
-
-    public Dialog dialog(){
-        Dialog dialog = new Dialog(SignIn.this);
-        dialog.setContentView(R.layout.custom_dialog_connect_internet);
-        dialog.setCancelable(false);
-        Button button = dialog.findViewById(R.id.btn_connect_internet);
-        button.setOnClickListener(this);
-        return dialog;
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        registerReceiver(broadcastReceiver, new IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"));
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        unregisterReceiver(broadcastReceiver);
     }
 }

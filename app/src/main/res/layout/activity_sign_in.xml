@@ -64,7 +64,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:fontFamily="@font/roboto_regular"
+                    android:fontFamily="@font/roboto_light"
                     android:text="@string/username"
                     android:textColor="@color/colorGray"
                     android:textSize="@dimen/textMedium" />
@@ -92,7 +92,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/padding_edt_form_signIn"
                     android:layout_weight="1"
-                    android:fontFamily="@font/roboto_regular"
+                    android:fontFamily="@font/roboto_thin"
                     android:text="@string/password"
                     android:textColor="@color/colorGray"
                     android:textSize="@dimen/textMedium" />
