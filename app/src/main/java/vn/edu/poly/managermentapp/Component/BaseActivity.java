@@ -2,6 +2,10 @@ package vn.edu.poly.managermentapp.Component;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -9,11 +13,13 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 
-public class BaseActivity extends Activity {
+import vn.edu.poly.managermentapp.Networking.NetworkStateMonitor;
+
+public class BaseActivity extends AppCompatActivity {
 
     private final int MY_PERMISSIONS_REQUEST_INTERNET = 10;
 
-    public void checkInternet(Activity thisActivity) {
+    public void checkInternetPermission(Activity thisActivity) {
 
         if (ContextCompat.checkSelfPermission(thisActivity,
                 Manifest.permission.INTERNET)
